@@ -9,6 +9,8 @@ $(document).ready(function () {
     allFileNames = $("#mp3Filenames")[0].innerText.split(",");
     allFileNames[0] = allFileNames[0].trim();
 
+    // console.log(allFileNames);
+
     // Default no sharps or flats
     fileNames = allFileNames.filter(function (fileName) {
         if (fileName.trim().split(".")[0].length == 2) {
@@ -53,7 +55,7 @@ $(document).ready(function () {
         var thisButton = $(this)[0];
 
         if (thisButton.innerText === "Start") {
-            r = Math.floor(Math.random() * fileNames.length) + 1;
+            r = Math.floor(Math.random() * fileNames.length - 1) + 1;
             playSound(r);
 
             $(".keyNoteReveal")[0].innerText = "♪♪♪";
@@ -94,11 +96,11 @@ $(document).ready(function () {
 
 function playSound(r) {
     s = new Audio(soundsPath + fileNames[r]);
-    s = 0.2;
+    s.currentTime = 0.2;
     s.play();
 
     // if (sounds[fileNames[r]] == undefined) {
-    //     sounds[fileNames[r]] = new Audio(soundsPath + fileNames[r])
+    //     sounds[fileNames[r]] = new Audio(soundsPath + fileNames[r]);
     // }
     // else {
     //     sounds[fileNames[r]].pause();
@@ -110,6 +112,7 @@ function playSound(r) {
 
 
 function fileNameToNote(name) {
+    console.log(name);
     name = name.split(".")[0];
     if (name[1] == 'b') {
         flatName = name[0] + name[2] + "♭";
