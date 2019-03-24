@@ -93,15 +93,21 @@ $(document).ready(function () {
 
 
 function playSound(r) {
-    if (sounds[fileNames[r]] == undefined) {
-        sounds[fileNames[r]] = new Audio(soundsPath + fileNames[r])
-    }
-    else {
-        sounds[fileNames[r]].pause();
-    }
-    sounds[fileNames[r]].currentTime = 0.2;
-    sounds[fileNames[r]].play();
+    s = new Audio(soundsPath + fileNames[r]);
+    s = 0.2;
+    s.play();
+
+    // if (sounds[fileNames[r]] == undefined) {
+    //     sounds[fileNames[r]] = new Audio(soundsPath + fileNames[r])
+    // }
+    // else {
+    //     sounds[fileNames[r]].pause();
+    // }
+    // sounds[fileNames[r]].currentTime = 0.2;
+    // sounds[fileNames[r]].play();
 }
+
+
 
 function fileNameToNote(name) {
     name = name.split(".")[0];
