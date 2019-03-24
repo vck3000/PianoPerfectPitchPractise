@@ -19,7 +19,7 @@ app.get('/', (req, res) => res.render('index', fileNames = fileNamesLocal));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
-app.use(express.static('assets'))
+app.use(express.static('assets', { maxAge: 1800000 })) // expires in 30 mins. cache
 
 
 
