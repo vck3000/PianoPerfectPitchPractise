@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+    .keyNoteReveal {
+        font-size: 3em;
+        margin: auto;
+        padding: 5% 20% 5% 20%;
+        border: rgb(119, 119, 119) 2px solid;
+        border-radius: 15px;
+        background-color: rgb(221, 221, 221)
+    }
+
+
+    .container {
+        height: 100%;
+    }
+
+    .keyNoteRow {
+        height: 50%;
+    }
+
+
+    .centreDiv {
+        width: 80%;
+        height: 80%;
+
+        background-color: rgb(179, 206, 255);
+        border-radius: 10px;
+
+        position: absolute;
+        /*it can be fixed too*/
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        /*this to solve "the content will not be cut when the window is smaller than the content": */
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
+
+        padding: 0px;
+    }
+
+    .myButtonRow {
+        /* width: 100%; */
+        height: 10%;
+    }
+
+    .myButton {
+        width: 80%;
+        max-width: 600px;
+        /* height: 50%; */
+        margin: 0 auto;
+    }
+
+    .checkBoxSpan {
+        width: 80%;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .btn-fullSize {
+        height: 100%
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<body>
+
+    <div class="centreDiv">
+        <div class="container">
+            <div class="row keyNoteRow">
+                <span class="keyNoteReveal">
+                    
+                </span>
+            </div>
+            <div class="row myButtonRow">
+                <span class="replay myButton">
+                    <button id="replayButton" type="button" class="btn btn-primary btn-block btn-fullSize disabled"
+                        style="border-radius: 15px;">Replay sound</button>
+                </span>
+            </div>
+
+            <div class="row myButtonRow">
+            </div>
+
+            <div class="row myButtonRow">
+                <span class="reveal myButton">
+                    <button id="revealButton" type="button" class="btn btn-success btn-block btn-fullSize"
+                        style="border-radius: 15px;">Start</button>
+                </span>
+            </div>
+
+            <div class="row myButtonRow">
+                <span class="reveal checkBoxSpan">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="sharpFlatCheckBox">
+                        <label class="custom-control-label" for="sharpFlatCheckBox">Include sharps and flats</label>
+                    </div>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mp3Filenames" style="display: none;">
+        <%=fileNames%>
+    </div>
+
+
+    <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+
+
+</body>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="scripts/index.js"></script>
+
+</html>
